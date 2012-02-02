@@ -1,0 +1,12 @@
+.block {
+    width: 250px;
+    height: 250px;
+    float: left;
+    background: grey;
+    margin: 0 10px 10px 0;
+}
+
+#pane {
+    position: relative;
+    min-width: 780px;
+}
