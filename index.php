@@ -17,7 +17,7 @@
 
 <div id="pane">
     <?php for ($i = 1; $i <= 20; $i++) {
-    echo "<div class='block' data-no='".$i."'></div>";
+    echo "<div class='block' data-no='".$i."'><p>".$i."</p></div>";
     } ?>
 </div>
 

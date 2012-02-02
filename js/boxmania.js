@@ -21,10 +21,24 @@ function boxmania(selector) {
         } while (colIterator <= 7);
     }
 
+    function checkColNo() {
+        colsNo = Math.floor(($(window).width() - 16) / 260);
+        //setInterval(function () {
+        //    colsNo = Math.floor(($(window).width() - 16) / 260);
+        //    console.log(colsNo);
+        //}, 1000);
+    }
+
     function fillGaps() {
         var leftOffset = 0,
             topOffset = 0,
             clickedCol = checkClickedCol();
+
+        if (clickedCol === 1) {return;}
+        if (clickedCol === colsNo) {
+            clickedCol -=1;
+            $('.block:nth-child(' + (boxNo - 1) + ')').hide();
+        }
 
         i = 1;
         do {
@@ -46,14 +60,6 @@ function boxmania(selector) {
 
     }
 
-    function checkColNo() {
-        colsNo = Math.floor(($(window).width() - 16) / 260);
-        //setInterval(function () {
-        //    colsNo = Math.floor(($(window).width() - 16) / 260);
-        //    console.log(colsNo);
-        //}, 1000);
-    }
-
     $(selector + ' .block').click(function () {
 
         checkColNo();
@@ -64,10 +70,20 @@ function boxmania(selector) {
             getStateBack();
             $(this).removeAttr('style').removeClass('big');
         } else {
+
+            $(selector + ' .block').each(function () {
+                if ($(this).hasClass('big')) {
+                    console.log('found big one')
+                    getStateBack();
+                    $(this).removeAttr('style').removeClass('big');
+                }
+            });
+
             $(this).css({
                 width: '510px',
                 height: '1030px'
             }).addClass('big');
+
             fillGaps();
         }
 

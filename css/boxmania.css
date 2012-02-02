@@ -6,6 +6,17 @@
     margin: 0 10px 10px 0;
 }
 
+.block p {
+    font-size: 40px;
+    color: #ffffff;
+}
+
+.block.big p {
+    font-size: 40px;
+    color: #ffffff;
+    padding: 50px 0 0 185px;
+}
+
 #pane {
     position: relative;
     min-width: 780px;
