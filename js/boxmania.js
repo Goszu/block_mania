@@ -35,9 +35,11 @@ function boxmania(selector) {
             clickedCol = checkClickedCol();
 
         if (clickedCol === 1) {return;}
+
+        // TODO add proper handling when item from last column clicked (for now temporary solution)
         if (clickedCol === colsNo) {
             clickedCol -=1;
-            $('.block:nth-child(' + (boxNo - 1) + ')').hide();
+            $('.block:nth-child(' + (boxNo - 1) + ')').hide().addClass('moved');
         }
 
         i = 1;
