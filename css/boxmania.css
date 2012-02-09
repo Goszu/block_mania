@@ -1,23 +1,38 @@
 .block {
-    width: 250px;
-    height: 250px;
+    width: 220px;
+    height: 195px;
+    float: left;
+    background: grey;
+    margin: 0 10px 10px 0;
+    overflow: hidden;
+}
+
+.big-block {
+    overflow: visible;
     float: left;
     background: grey;
     margin: 0 10px 10px 0;
 }
 
 .block p {
-    font-size: 120px;
+    font-size: 100px;
     color: #ffffff;
+    margin: 25px;
 }
 
-.block.big p {
-    font-size: 120px;
+.big-block p {
+    font-size: 100px;
     color: #ffffff;
     padding: 50px 0 0 185px;
+    overflow: auto;
 }
 
 #pane {
     position: relative;
-    min-width: 780px;
+    min-width: 690px;
+}
+
+.test {
+    height: 1100px;
+    background: red;
 }
